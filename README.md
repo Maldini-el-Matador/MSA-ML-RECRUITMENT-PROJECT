@@ -10,6 +10,25 @@ This project uses a few properties (like molecular weight and lipophilicity) of 
 ## How does it work?
 
 1.  **Data:** It uses a public dataset with 1144 molecules and their properties.
+ The dataset used is the Delaney solubility dataset, which is a standard benchmark in this field.
+
+    Source: https://raw.githubusercontent.com/dataprofessor/data/master/delaney_solubility_with_descriptors.csv
+
+    Size: 1144 molecules, 5 columns
+
+    Features (X):
+
+        MolLogP: Molecular lipophilicity (Octanol-water partition coefficient)
+
+        MolWt: Molecular weight
+
+        NumRotatableBonds: Number of rotatable bonds
+
+        AromaticProportion: Proportion of aromatic atoms in the molecule
+
+    Target (y):
+
+        logS: Logarithm of the aqueous solubility (mol/L), the value we want to predict.
 2.  **Model:** A simple Linear Regression model is trained to find the relationship between the molecular properties and their solubility.
 3.  **Result:** The model learns this relationship and can then predict the solubility of new molecules.
 
